@@ -1,0 +1,15 @@
+E:\RND\Oop-Rehearse\bin\Debug\net6.0\Oop-Rehearse.exe
+E:\RND\Oop-Rehearse\bin\Debug\net6.0\Oop-Rehearse.deps.json
+E:\RND\Oop-Rehearse\bin\Debug\net6.0\Oop-Rehearse.runtimeconfig.json
+E:\RND\Oop-Rehearse\bin\Debug\net6.0\Oop-Rehearse.dll
+E:\RND\Oop-Rehearse\bin\Debug\net6.0\Oop-Rehearse.pdb
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.csproj.AssemblyReference.cache
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.GeneratedMSBuildEditorConfig.editorconfig
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.AssemblyInfoInputs.cache
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.AssemblyInfo.cs
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.csproj.CoreCompileInputs.cache
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.dll
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\refint\Oop-Rehearse.dll
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.pdb
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\Oop-Rehearse.genruntimeconfig.cache
+E:\RND\Oop-Rehearse\obj\Debug\net6.0\ref\Oop-Rehearse.dll

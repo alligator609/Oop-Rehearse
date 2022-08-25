@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Oop-Rehearse/1.0.0": {
+        "runtime": {
+          "Oop-Rehearse.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Oop-Rehearse/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
