@@ -1,50 +1,24 @@
 ﻿
 
+var cookier = new HttpCookie();
 
-var customer = new Customer(new DateTime(1993, 11, 7));
+cookier["name"] = "Mosh";
 
+Console.WriteLine(cookier["name"]);
 
-customer.Name = "test";
-//customer.BirthDate = new DateTime(1993, 11, 7);
-
-Console.WriteLine(customer.Age);
-
-public class Customer 
+public class HttpCookie 
 {
-
-    private string _name;
-
-    public string Name { get; set; }  // c# automatically create private property called Name and get and set it 
-    public DateTime BirthDate { get; private set; } // private used so that we will set it only once and its readonly 
-
-    public Customer(DateTime birthDate)
+    private readonly Dictionary<string, string> _dictionary;
+    public DateTime Expiry { get; set; }
+    public HttpCookie()
     {
-        BirthDate = birthDate;
+        _dictionary = new Dictionary<string, string>();
     }
 
-    public int Age
+    // indexer 
+    public string this[string key]
     {
-        get
-        {
-            var timespan = DateTime.Now - BirthDate;
-            var years = timespan.Days / 365;
-            return years;
-        }
+        get { return _dictionary[key]; }
+        set { _dictionary[key] = value; }
     }
-    /*    public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-
-        }*/
-    /*    public string GetName ()
-        {
-            return _name; 
-        }
-        public void SetName(string name)
-        {
-            _name = name;
-        }
-    */
-
 }
