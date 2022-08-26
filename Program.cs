@@ -1,60 +1,45 @@
 ﻿
 
-using Oop_Rehearse;
 
-static void usePoints()
+var customer = new Customer(1);
+
+customer.Orders.Add(new Order());
+customer.Orders.Add(new Order());
+customer.Orders.Add(new Order());
+customer.Orders.Add(new Order());
+
+
+customer.Promote();
+
+
+Console.WriteLine(customer.Orders.Count);
+
+public class Customer 
 {
+    public int Id;
+    public string Name;
+    public readonly List<Order> Orders = new List<Order>();
 
-    try
+    public Customer (int id)
     {
-        var point = new Point(10, 20);
-
-        point.Move(40, 60);
-        Console.WriteLine("point is at " + point.X + point.Y);
-
-        point.Move(null);
-        Console.WriteLine("point is at " + point.X + point.Y);
-    }
-    catch (Exception)
-    {
-
-        Console.WriteLine("An unspected error accure ");
-
+        Id = id;
     }
 
+
+    public Customer(int id, string name) : this(id)
+    {
+        Id = id;
+        Name = name;
+    }
+
+    public void Promote()
+    {
+        // if u accedently reinitilize // so that readonly filed will give u an error cause it will initilize only once 
+       // Orders = new List<Order>();
+    }
 }
 
 
-Console.WriteLine(Calculator.Add(1,2,3,4,5,6,7,8));
-
-
-
-public class Point
-{
-    public int X;
-    public int Y;
-
-    public Point(int x, int y)
-    {
-        this.X = x;
-        this.Y = y;
-    }
-    public void Move (int x , int y)
-    {
-        this.X = x;
-        this.Y = y;
-
-    }
-
-    public void Move(Point newlocation)
-    {
-        /*  this.X = newlocation.X;
-          this.Y = newlocation.Y;*/
-        if (newlocation == null) 
-            throw new ArgumentNullException ("null new location");
-        Move(newlocation.X, newlocation.Y);
-
-    }
-
+public class Order
+{ 
 }
-
