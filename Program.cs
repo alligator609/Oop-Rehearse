@@ -1,24 +1,31 @@
 ﻿
 
-var cookier = new HttpCookie();
+var test = new Text();
+test.Width = 10;
+test.Copy() ;
+Console.WriteLine(test.Width);
 
-cookier["name"] = "Mosh";
-
-Console.WriteLine(cookier["name"]);
-
-public class HttpCookie 
+public class Presentation
 {
-    private readonly Dictionary<string, string> _dictionary;
-    public DateTime Expiry { get; set; }
-    public HttpCookie()
-    {
-        _dictionary = new Dictionary<string, string>();
-    }
+    public int Width { get; set; }
+    public int Height { get; set; }
 
-    // indexer 
-    public string this[string key]
+    public void Copy()
     {
-        get { return _dictionary[key]; }
-        set { _dictionary[key] = value; }
+        Console.WriteLine("Object copied");
+    }
+    public void Duplicate()
+    {
+        Console.WriteLine("Object duplicates");
+    }
+}
+
+public class Text :Presentation
+{
+    public int FontSize { get; set; }
+    public int FontName { get; set; }
+    public void AddHyperLink (string url)
+    {
+        Console.WriteLine("We added a hyper link");
     }
 }
