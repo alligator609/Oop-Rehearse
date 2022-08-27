@@ -6,6 +6,9 @@ shapes.Add(new Square());
 
 var canvas = new Canvas();
 canvas.DrawShape(shapes);
+
+
+// var shape = new Shape();  // abstact class can't initiate
 public class Canvas
 {
     public void DrawShape(List<Shape> shapes)
@@ -42,15 +45,11 @@ public class Square : Shape
 }
 
 
-
-public class Shape
+// abstact use to tell that class has abstract  modifier 
+public abstract class Shape
 {
     public int Height { get; set; }
     public int Width { get; set; }
 
-    // virtual is used so that it can be override by child class
-    public virtual void Draw()
-    {
-
-    }
+    public abstract void Draw(); // abstract  modifier states that a class or a member misses implementation , so its forces it
 }
