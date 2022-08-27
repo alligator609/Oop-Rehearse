@@ -79,3 +79,8 @@ Polymorphism means "many forms", and it occurs when we have many classes that ar
 
 Abstract modifier states that a class or a member misses implementation. We use abstract members when it doesn’t make sense to implement them in a base class. For example, the concept of drawing a shape is too abstract. We don’t know how to draw
 a shape. This needs to be implemented in the derived classes.
+
+# Sealed Classes and Members
+
+* If applied to a class, prevents derivation from that class.
+* If applied to a method, prevents overriding of that method in a derived class.

@@ -24,14 +24,15 @@ public class Canvas
 
 public class Ractangular : Shape
 {
-    public override void Draw()
+    public sealed override void Draw()
     {
         Console.WriteLine("draw ractangular");
     }
 }
 public class Circle : Shape
 {
-    public override void Draw()
+   // If applied to a method, prevents overriding of that method in a derived class. Slight faster but no use in real life 
+    public sealed override void Draw()
     {
         Console.WriteLine("Circle ractangular");
     }
