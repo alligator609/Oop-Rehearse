@@ -1,21 +1,56 @@
-﻿using System.Collections;
-
-// boxing  and not type safe
-var list1 = new ArrayList();
-list1.Add(1);
-list1.Add("Mosh");
-list1.Add(DateTime.Today);
-
-foreach (var item in list1)
-    Console.WriteLine(item);
+﻿var shapes = new List<Shape>();
+shapes.Add(new Ractangular());
+shapes.Add(new Circle());
+shapes.Add(new Square());
 
 
+var canvas = new Canvas();
+canvas.DrawShape(shapes);
+public class Canvas
+{
+    public void DrawShape(List<Shape> shapes)
+    {
+        foreach (Shape shape in shapes)
+        {
+            shape.Draw();
+        }
+    }
+}
 
-// Unboxing and type safe
-var list2 = new List<string>();
-list2.Add("zia");
-list2.Add("Mosh");
-list2.Add("me");
 
-foreach (var item in list2)
-    Console.WriteLine(item);
+
+public class Ractangular : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("draw ractangular");
+    }
+}
+public class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Circle ractangular");
+    }
+}
+public class Square : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Square ractangular");
+    }
+}
+
+
+
+public class Shape
+{
+    public int Height { get; set; }
+    public int Width { get; set; }
+
+    // virtual is used so that it can be override by child class
+    public virtual void Draw()
+    {
+
+    }
+}
