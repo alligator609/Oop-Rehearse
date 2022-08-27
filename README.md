@@ -26,3 +26,8 @@ Indexer an easier way to access elements of an collection
 A kind of relationship between two classes that allows one to inherit code from the other.
 Referred to as Is-A relationship: A Car is a Vehicle
 Benefits: code re-use and polymorphic behaviour.
+
+
+# Composition
+A kind of relationship that allows one class to contain another.
+Referred to as Has-A relationship: A Car has an Engine

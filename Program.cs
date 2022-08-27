@@ -1,31 +1,48 @@
 ﻿
 
-var test = new Text();
-test.Width = 10;
-test.Copy() ;
-Console.WriteLine(test.Width);
+var db = new DbMigrator(new Logger());
 
-public class Presentation
+var logger = new Logger();
+
+var intaller = new Installer (logger);
+
+db.Migrate();
+intaller.Install();
+
+public class DbMigrator
 {
-    public int Width { get; set; }
-    public int Height { get; set; }
+    private readonly Logger _logger;
 
-    public void Copy()
+    public DbMigrator(Logger logger)
     {
-        Console.WriteLine("Object copied");
+        _logger = logger;
     }
-    public void Duplicate()
+    public void Migrate()
     {
-        Console.WriteLine("Object duplicates");
+        _logger.Log("we are migrating");
     }
 }
 
-public class Text :Presentation
+public class Installer
 {
-    public int FontSize { get; set; }
-    public int FontName { get; set; }
-    public void AddHyperLink (string url)
+    private readonly Logger _logger;
+
+    public Installer(Logger logger)
     {
-        Console.WriteLine("We added a hyper link");
+        _logger = logger;
+    }
+    public void Install()
+    {
+        _logger.Log("we are Installing");
+    }
+}
+
+
+public class Logger
+{
+
+    public void Log(string msg)
+    {
+        Console.WriteLine(msg);
     }
 }
