@@ -41,3 +41,8 @@ We can use the base keyword to pass control to a base class constructor.
 # Composition
 A kind of relationship that allows one class to contain another.
 Referred to as Has-A relationship: A Car has an Engine
+
+
+# Upcasting and Downcasting
+Upcasting: conversion from a derived class to a base class
+Downcasting: conversion from a base class to a derived class

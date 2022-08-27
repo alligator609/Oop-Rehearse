@@ -1,23 +1,44 @@
 ﻿
+// up cast 
+Text text = new Text ();
 
-var car = new Car("123asdfasd");
+Shape shape = text;
 
-public class Car : Vehicle
+text.Width  = 1;   // text have al the parameter from shapre class
+shape.Width = 2;  // shape only have the parameter of its own
+
+Console.WriteLine(text.Width);
+
+// down cast
+
+
+Shape shape1 = new Text();
+Text text1 = (Text)shape;  // also can written Text text1 = shape as Text; 
+
+text1.FontName = "test"; // as u can see text1 can use all the parameter of shape and text 
+
+Console.WriteLine(text1.FontName);
+
+
+
+public class Text : Shape
 {
-    public Car(string registrationNumber) : base(registrationNumber)
-    {
-        Console.WriteLine(" car registration no " + registrationNumber);
+    public int FontSize { get; set; }
 
-    }
+    public string FontName { get; set; }
+
 }
 
-public class Vehicle
+public class Shape
 {
-    public Vehicle(string registrationNumber)
-    {
-        RegistrationNumber = registrationNumber;
-        Console.WriteLine(" vehicle registration no "+ registrationNumber);
-    }
+    public int Width { get; set; }
+    public int Height { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
 
-    public string RegistrationNumber { get; }
+    public void Draw()
+    {
+
+    }
+    
 }
