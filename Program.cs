@@ -1,44 +1,21 @@
-﻿
-// up cast 
-Text text = new Text ();
+﻿using System.Collections;
 
-Shape shape = text;
+// boxing  and not type safe
+var list1 = new ArrayList();
+list1.Add(1);
+list1.Add("Mosh");
+list1.Add(DateTime.Today);
 
-text.Width  = 1;   // text have al the parameter from shapre class
-shape.Width = 2;  // shape only have the parameter of its own
-
-Console.WriteLine(text.Width);
-
-// down cast
-
-
-Shape shape1 = new Text();
-Text text1 = (Text)shape;  // also can written Text text1 = shape as Text; 
-
-text1.FontName = "test"; // as u can see text1 can use all the parameter of shape and text 
-
-Console.WriteLine(text1.FontName);
+foreach (var item in list1)
+    Console.WriteLine(item);
 
 
 
-public class Text : Shape
-{
-    public int FontSize { get; set; }
+// Unboxing and type safe
+var list2 = new List<string>();
+list2.Add("zia");
+list2.Add("Mosh");
+list2.Add("me");
 
-    public string FontName { get; set; }
-
-}
-
-public class Shape
-{
-    public int Width { get; set; }
-    public int Height { get; set; }
-    public int X { get; set; }
-    public int Y { get; set; }
-
-    public void Draw()
-    {
-
-    }
-    
-}
+foreach (var item in list2)
+    Console.WriteLine(item);
