@@ -1,48 +1,23 @@
 ﻿
 
-var db = new DbMigrator(new Logger());
+var car = new Car("123asdfasd");
 
-var logger = new Logger();
-
-var intaller = new Installer (logger);
-
-db.Migrate();
-intaller.Install();
-
-public class DbMigrator
+public class Car : Vehicle
 {
-    private readonly Logger _logger;
+    public Car(string registrationNumber) : base(registrationNumber)
+    {
+        Console.WriteLine(" car registration no " + registrationNumber);
 
-    public DbMigrator(Logger logger)
-    {
-        _logger = logger;
-    }
-    public void Migrate()
-    {
-        _logger.Log("we are migrating");
     }
 }
 
-public class Installer
+public class Vehicle
 {
-    private readonly Logger _logger;
-
-    public Installer(Logger logger)
+    public Vehicle(string registrationNumber)
     {
-        _logger = logger;
+        RegistrationNumber = registrationNumber;
+        Console.WriteLine(" vehicle registration no "+ registrationNumber);
     }
-    public void Install()
-    {
-        _logger.Log("we are Installing");
-    }
-}
 
-
-public class Logger
-{
-
-    public void Log(string msg)
-    {
-        Console.WriteLine(msg);
-    }
+    public string RegistrationNumber { get; }
 }
