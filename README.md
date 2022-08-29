@@ -84,3 +84,7 @@ a shape. This needs to be implemented in the derived classes.
 
 * If applied to a class, prevents derivation from that class.
 * If applied to a method, prevents overriding of that method in a derived class.
+
+# Interface 
+
+* An interface is simply a declaration of the capabilities (or services) that a class should provide.
