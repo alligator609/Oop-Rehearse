@@ -1,67 +1,58 @@
 ﻿
+var encode = new VideoEncoder();
+encode.RegisterNotificationChannel(new SmsNotificationChannel());
+encode.RegisterNotificationChannel(new MailNotificationChannel());
+encode.Encode(new Video());
 
-var dv = new DbMigrator(new FileLogger("E:/RND/Oop-Rehearse/test.txt"));
-var dv2 = new DbMigrator(new Logger());
-dv.Migrate();
-dv2.Migrate();
-
-public class DbMigrator
+public interface INotificationChannel
 {
-    public ILogger _logger { get; set; }
-    public DbMigrator(ILogger Logger)
-    {
-        _logger = Logger;
-    }
-    public void Migrate()
-    {
-        _logger.Info("Info" + DateTime.Now);
-
-        _logger.Error("Error" + DateTime.Now);
-    }
-}
-public interface ILogger
-{
-    void Info(string message);
-    void Error(string message);
+    void Send(Message message); 
 }
 
-public class FileLogger : ILogger
+public class Message
 {
-    private readonly string _path;
-    public FileLogger(string path)
-    {
-        _path = path;
-    }
-    public void Error(string message)
-    {
-        write(message);
-    }
 
-    public void Info(string message)
-    {
-        write(message);
-    }
+}
 
-    public void write(string message)
-    {
+public class Video
+{
 
-        using (var stream = new StreamWriter(_path, true))
-        {
-            stream.WriteLine(message);
-        }
+}
+
+public class MailNotificationChannel : INotificationChannel
+{
+    public void Send(Message message)
+    {
+        Console.WriteLine("sending mail...");
     }
 }
 
-public class Logger : ILogger
+
+public class SmsNotificationChannel : INotificationChannel
 {
-    public void Error(string message)
+    public void Send(Message message)
     {
-        Console.WriteLine(message);
+        Console.WriteLine("sending sms...");
+    }
+}
+
+public class VideoEncoder
+{
+    private readonly List<INotificationChannel> _notificationChannels;
+
+    public VideoEncoder()
+    {
+        _notificationChannels = new List<INotificationChannel>();
+    }
+    public void Encode(Video video)
+    {
+        foreach (var channel in _notificationChannels)
+            channel.Send(new Message());
     }
 
-    public void Info(string message)
+    public void RegisterNotificationChannel (INotificationChannel channel)
     {
-        Console.WriteLine(message);
+        _notificationChannels.Add(channel);
     }
 
 }
